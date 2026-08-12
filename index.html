@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diário de Sintomas e Lembrete de Medicamentos</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        section { margin-bottom: 30px; }
+        fieldset { border: 1px solid #ccc; padding: 15px; margin-bottom: 10px; }
+        legend { font-weight: bold; padding: 0 5px; }
+        form > div { margin-bottom: 10px; }
+        label { display: block; margin-bottom: 5px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Diário de Sintomas e Lembrete de Medicamentos</h1>
+    </header>
+
+    <main>
+        <section id="symptom-diary">
+            <h2>Diário de Sintomas</h2>
+
+            <fieldset>
+                <legend>Novo Registro de Sintoma</legend>
+                <form id="symptom-form">
+                    <div>
+                        <label for="symptom-date">Data:</label>
+                        <input type="date" id="symptom-date" name="date" required>
+                    </div>
+
+                    <div>
+                        <label for="symptom-time">Horário:</label>
+                        <input type="time" id="symptom-time" name="time" required>
+                    </div>
+
+                    <div>
+                        <label for="symptom-intensity">Intensidade (1-10):</label>
+                        <input type="range" id="symptom-intensity" name="intensity" min="1" max="10" value="5">
+                        <span id="intensity-value">5</span> </div>
+
+                    <div>
+                        <label for="symptom-description">Descrição:</label>
+                        <textarea id="symptom-description" name="description" rows="4" cols="50" placeholder="Descreva seus sintomas..."></textarea>
+                    </div>
+
+                    <div>
+                        <button type="submit">Registrar Sintoma</button>
+                    </div>
+                </form>
+            </fieldset>
+
+            <div>
+                <h3>Registros Anteriores</h3>
+                <ul id="symptom-list">
+                    </ul>
+            </div>
+        </section>
+
+
+        <section id="medication-reminder">
+            <h2>Lembrete de Medicamentos</h2>
+
+            <fieldset>
+                <legend>Adicionar Medicamento</legend>
+                <form id="medication-form">
+                    <div>
+                        <label for="medication-name">Medicamento:</label>
+                        <input type="text" id="medication-name" name="name" required placeholder="Ex: Ibuprofeno">
+                    </div>
+
+                    <div>
+                        <label for="medication-dosage">Dosagem:</label>
+                        <input type="text" id="medication-dosage" name="dosage" required placeholder="Ex: 400mg">
+                    </div>
+
+                    <div>
+                        <label for="medication-time">Horário:</label>
+                        <input type="time" id="medication-time" name="time" required>
+                    </div>
+
+                    <div>
+                        <button type="submit">Adicionar Lembrete</button>
+                    </div>
+                </form>
+            </fieldset>
+
+            <div>
+                <h3>Meus Medicamentos</h3>
+                <table id="medication-table">
+                    <thead>
+                        <tr>
+                            <th>Medicamento</th>
+                            <th>Dosagem</th>
+                            <th>Horário</th>
+                            </tr>
+                    </thead>
+                    <tbody id="medication-table-body">
+                        </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Sua Aplicação de Saúde. Consulte sempre um médico.</p>
+    </footer>
+
+    </body>
+</html>
